@@ -1,0 +1,131 @@
+:root{
+    --black: #27241F;
+    --darkgrey: #3F4845;
+    --lightgrey: #98A1A0;
+    --cream: #E3D2B6;
+    --dirtyorange: #C7A977;
+}
+
+body{
+    background-color: var(--black);
+    display: grid;
+    height: 100vh;
+
+    grid-template-rows: 0.2fr, 1.8fr, 1fr, 1.8fr, 0.2fr;
+
+    grid-template-areas:
+    "header"
+    "main"
+    "about"
+    "works"
+    "footer"
+    ;
+}
+
+header{
+    grid-area: header;
+    background-color: var(--cream);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+header a{
+    color: black;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+main{
+    grid-area: main;
+    background-color: var(--darkgrey);
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+h1{
+    color: white;
+}
+#gallery{
+    background-color: var(--lightgrey);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+#gallery img{
+    height: 25%;
+    width: 25%;
+}
+
+#about{
+    grid-area: about;
+    text-align: center;
+    background-color: var(--lightgrey);
+    border: 5px solid var(--darkgrey);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#works{
+    grid-area: works;
+    background-color: var(--darkgrey);
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#paperheader{
+    color: white;
+}
+#papers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.paper{
+    display: block;
+    text-align: center;
+    background-color: var(--lightgrey);
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+footer{
+    grid-area: footer;
+    background-color: var(--dirtyorange);
+    border-radius: 10px;
+    padding: 10px;
+}
+nav img{
+    width: 2vw;
+    height: 2vh;
+}
+
+@media only screen and (max-width: 500px){
+    body{
+        grid-template-rows: 0.2fr, 1fr, 1.6fr, 2fr, 0.2fr;
+
+        grid-template-areas:
+        "header"
+        "main"
+        "about"
+        "works"
+        "footer"
+        ;
+    }
+
+    #gallery{
+        display: none;
+    }
+    #papers{
+        display: flex;
+        flex-direction: row;
+    }
+}
